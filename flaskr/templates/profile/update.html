@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Update Profile{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <a class="edit" href="{{ url_for('profile.updateUsername' ) }}">Edit Username</a><br>
+  <a class="edit" href="{{ url_for('profile.updatePassword' ) }}">Edit Password</a>
+{% endblock %}
