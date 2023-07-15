@@ -35,9 +35,7 @@ def register():
                 return redirect(url_for("auth.login"))
         flash(error)
         
-        return render_template('auth/register.html')
-    if request.method == 'GET':
-        return '<h1>Login</h1'
+    return render_template('auth/register.html')
 
 
 @bp.route('/login', methods=('GET', 'POST'))
@@ -48,8 +46,8 @@ def login():
         db = get_db()
         error = None
         user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,).fetchone() # fetchone() == Fetch one row 
-        )
+            'SELECT * FROM user WHERE username = ?', (username,) 
+        ).fetchone() # fetchone() == Fetch one row
         
         if user is None:
             error = 'Incorrect username.'
