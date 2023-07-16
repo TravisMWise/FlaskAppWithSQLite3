@@ -1,32 +1,32 @@
 html {
   font-family: sans-serif;
-  background: #eee;
+  background: #848484;
   padding: 1rem;
 }
 
 body {
   max-width: 960px;
   margin: 0 auto;
-  background: white;
+  background: rgb(79, 79, 79);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: serif;
-  color: #377ba8;
+  color: #ffffff;
   margin: 1rem 0;
 }
 
 a {
-  color: #377ba8;
+  color: #ffffff;
 }
 
 hr {
   border: none;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid rgb(0, 0, 0);
 }
 
 nav {
-  background: lightgray;
+  background: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
@@ -59,7 +59,7 @@ nav ul li a, nav ul li span, header .action {
 }
 
 .content > header {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(0, 0, 0);
   display: flex;
   align-items: flex-end;
 }
@@ -72,8 +72,8 @@ nav ul li a, nav ul li span, header .action {
 .flash {
   margin: 1em 0;
   padding: 1em;
-  background: #cae6f6;
-  border: 1px solid #377ba8;
+  background: #000000;
+  border: 1px solid #000000;
 }
 
 .post > header {
@@ -92,12 +92,13 @@ nav ul li a, nav ul li span, header .action {
 }
 
 .post .about {
-  color: slategray;
+  color: rgb(255, 255, 255);
   font-style: italic;
 }
 
 .post .body {
   white-space: pre-line;
+  color: rgb(255, 255, 255);
 }
 
 .content:last-child {
@@ -115,13 +116,21 @@ nav ul li a, nav ul li span, header .action {
   margin-bottom: 0.5em;
 }
 
-.content input, .content textarea {
+.content input {
+  margin-bottom: 1em;
+  background-color: black;
+  color: white;
+}
+
+.content textarea {
   margin-bottom: 1em;
 }
 
 .content textarea {
   min-height: 12em;
   resize: vertical;
+  background-color: black;
+  color: white;
 }
 
 input.danger {
@@ -133,15 +142,13 @@ input[type=submit] {
   min-width: 10em;
 }
 
-/* .edit {
-  display: inline-block;
-  padding: 5px;
-  width: 20%;
-  background-color: #cae6f6;
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  margin: 5px auto;
-  text-align: center;
-  border: 1px solid black;
-} */
+
+select {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 2px;
+}
+
+option {
+  color: rgb(255, 255, 255);
+}
