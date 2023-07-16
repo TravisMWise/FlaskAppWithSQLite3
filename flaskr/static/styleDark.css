@@ -56,6 +56,7 @@ nav ul li a, nav ul li span, header .action {
 
 .content {
   padding: 0 1rem 1rem;
+  color: white;
 }
 
 .content > header {
