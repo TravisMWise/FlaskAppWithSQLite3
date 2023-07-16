@@ -82,3 +82,17 @@ def updatePassword():
 
 
     return render_template('profile/updatePassword.html')
+
+
+@bp.route('/updateMode', methods=('GET', 'POST'))
+def updateMode():
+    if request.method == 'POST':
+        db = get_db()
+        response = db.execute(
+            'UPDATE user SET mode = ? '
+            'WHERE id = ?',
+            (request.form['mode'], g.user['id'])
+        )
+        db.commit()
+        return redirect(url_for('profile.index'))
+    return render_template('profile/updateMode.html')

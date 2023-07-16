@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}Update Profile{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <select name="mode">
+      <option value="0">Light Mode</option>
+      <option value="1">Dark Mode</option>
+    </select>
+    <input type="submit" value="Update">
+  </form>
+{% endblock %}

@@ -2,7 +2,8 @@
 
 {% block header %}
   <h1>{% block title %}{{g.user['username']}}'s Profile{% endblock %}</h1>
-  <a class="action" href="{{ url_for('profile.update') }}">Edit Profile</a>
+  <a class="action" href="{{url_for('blog.create')}}">Create</a>
+  <a class="action" href="{{ url_for('profile.update') }}">Profile</a>
 {% endblock %}
 
 {% block content %}
