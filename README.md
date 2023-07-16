@@ -9,3 +9,7 @@
 
 ### Init Database
 `flask --app flaskr init-db`
+
+
+### Install testing 
+pip install pytest coverage
