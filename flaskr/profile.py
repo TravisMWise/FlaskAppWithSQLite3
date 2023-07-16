@@ -2,11 +2,13 @@ from flask import (
     Blueprint, render_template, request, g, flash, redirect, url_for
 )
 from flaskr.db import get_db
+from flaskr.auth import login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 
 bp = Blueprint('profile', __name__, url_prefix='/profile')
 
 @bp.route('/')
+@login_required
 def index():
     db = get_db()
     posts = db.execute(
@@ -19,11 +21,13 @@ def index():
     return render_template('profile/index.html', user_posts=posts)
 
 @bp.route('/update')
+@login_required
 def update():
     return render_template('profile/update.html')
 
 
 @bp.route('/updateUsername', methods=('GET', 'POST'))
+@login_required
 def updateUsername():
     if request.method == 'POST':
         db = get_db()
@@ -54,6 +58,7 @@ def updateUsername():
 
 
 @bp.route('/updatePassword', methods=('GET', 'POST'))
+@login_required
 def updatePassword():
     if request.method == 'POST':
         oldPassword = request.form["oldPassword"]
@@ -85,6 +90,7 @@ def updatePassword():
 
 
 @bp.route('/updateMode', methods=('GET', 'POST'))
+@login_required
 def updateMode():
     if request.method == 'POST':
         db = get_db()
